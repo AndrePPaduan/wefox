@@ -36,8 +36,6 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public boolean checkPayment(Payment payment) throws IOException {
-        //Connect to the gateway, if get Ok back, save
-        //This one go through REST
 
         HttpURLConnection http = httpConnection.createHttpConnection("http://localhost:9000/payment");
         String data = gson.toJson(payment);

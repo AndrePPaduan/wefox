@@ -1,5 +1,7 @@
 package com.wefox.wefox.model;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.UUID;
@@ -9,10 +11,11 @@ import java.util.UUID;
 public class Payment {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue
+    @Type(type="org.hibernate.type.UUIDCharType")
     private UUID id;
 
-    private int accountId;
+    private Integer accountId;
 
     private PaymentType paymentType;
 
@@ -30,11 +33,11 @@ public class Payment {
         this.id = id;
     }
 
-    public int getAccountId() {
+    public Integer getAccountId() {
         return accountId;
     }
 
-    public void setAccountId(int accountId) {
+    public void setAccountId(Integer accountId) {
         this.accountId = accountId;
     }
 

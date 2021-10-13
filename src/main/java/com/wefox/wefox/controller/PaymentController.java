@@ -23,11 +23,8 @@ public class PaymentController {
     public ResponseEntity<?> checkPaymentValidation(@RequestBody Payment payment) throws IOException {
 
         if (paymentService.checkPayment(payment)) {
-            System.out.println("111");
             return new ResponseEntity<>(payment, HttpStatus.OK);
         } else {
-            System.out.println("2");
-
             return new ResponseEntity<>("Error validating, please check the logs", HttpStatus.EXPECTATION_FAILED);
         }
     }

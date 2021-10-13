@@ -1,14 +1,18 @@
 package com.wefox.wefox.model;
 
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 @Table(name = "error")
 public class Error {
 
     @Id
-    @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue
+    @Type(type="org.hibernate.type.UUIDCharType")
+    private UUID id;
 
     private int paymentId;
 
@@ -16,12 +20,11 @@ public class Error {
 
     private String description;
 
-
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
