@@ -2,6 +2,7 @@ package com.wefox.wefox.model;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.UUID;
 
 @Entity
 @Table(name = "payment")
@@ -9,7 +10,7 @@ public class Payment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private UUID id;
 
     private int accountId;
 
@@ -21,11 +22,11 @@ public class Payment {
 
     private Timestamp creationDate;
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
