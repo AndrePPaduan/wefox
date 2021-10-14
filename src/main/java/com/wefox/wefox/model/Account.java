@@ -1,10 +1,8 @@
 package com.wefox.wefox.model;
 
-import org.hibernate.annotations.Type;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.UUID;
+import java.util.Date;
 
 @Entity
 @Table(name = "account")
@@ -12,19 +10,20 @@ public class Account {
 
     @Id
     @GeneratedValue
-    private Integer id;
+    private Integer accountId;
 
+    private String name;
     private String email;
-    private Timestamp birthdate;
-    private Timestamp lastPayment;
-    private Timestamp creationDate;
+    private Date birthdate;
+    private Timestamp lastPaymentDate;
+    private Timestamp createdOn;
 
     public Integer getId() {
-        return id;
+        return accountId;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.accountId = id;
     }
 
     public String getEmail() {
@@ -35,27 +34,35 @@ public class Account {
         this.email = email;
     }
 
-    public Timestamp getBirthdate() {
+    public Date getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(Timestamp birthdate) {
+    public void setBirthdate(Date birthdate) {
         this.birthdate = birthdate;
     }
 
-    public Timestamp getLastPayment() {
-        return lastPayment;
+    public Timestamp getLastPaymentDate() {
+        return lastPaymentDate;
     }
 
-    public void setLastPayment(Timestamp lastPayment) {
-        this.lastPayment = lastPayment;
+    public void setLastPaymentDate(Timestamp lastPaymentDate) {
+        this.lastPaymentDate = lastPaymentDate;
     }
 
-    public Timestamp getCreationDate() {
-        return creationDate;
+    public Timestamp getCreatedOn() {
+        return createdOn;
     }
 
-    public void setCreationDate(Timestamp creationDate) {
-        this.creationDate = creationDate;
+    public void setCreatedOn(Timestamp createdOn) {
+        this.createdOn = createdOn;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 }

@@ -29,8 +29,9 @@ public class PaymentServiceImpl implements PaymentService {
 
     @Override
     public Payment add(Payment payment) {
+
         paymentRepository.save(payment);
-        accountService.updateLastPayment(payment.getAccountId(), payment.getCreationDate());
+        accountService.updateLastPayment(payment.getAccountId(), payment.getCreatedOn());
         return payment;
     }
 

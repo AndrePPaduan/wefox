@@ -32,6 +32,7 @@ public class PaymentController {
     @KafkaListener(topics = "online",
             groupId = "wefox")
     ResponseEntity<?> listenerOnline(Payment payment) throws IOException {
+        System.out.println("ONLINE");
         if (paymentService.checkPayment(payment)) {
             return new ResponseEntity<>(payment, HttpStatus.OK);
         } else {

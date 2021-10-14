@@ -13,7 +13,7 @@ public class Payment {
     @Id
     @GeneratedValue
     @Type(type="org.hibernate.type.UUIDCharType")
-    private UUID id;
+    private UUID paymentId;
 
     private Integer accountId;
 
@@ -23,14 +23,14 @@ public class Payment {
 
     private int amount;
 
-    private Timestamp creationDate;
+    private Timestamp createdOn;
 
-    public UUID getId() {
-        return id;
+    public UUID getPaymentId() {
+        return paymentId;
     }
 
-    public void setId(UUID id) {
-        this.id = id;
+    public void setPaymentId(UUID paymentId) {
+        this.paymentId = paymentId;
     }
 
     public Integer getAccountId() {
@@ -65,11 +65,11 @@ public class Payment {
         this.amount = amount;
     }
 
-    public Timestamp getCreationDate() {
-        return creationDate;
+    public Timestamp getCreatedOn() {
+        return createdOn;
     }
 
-    public void setCreationDate(Timestamp creationDate) {
-        this.creationDate = creationDate;
+    public void setCreatedOn(Timestamp createdOn) {
+        this.createdOn = createdOn;
     }
 }
